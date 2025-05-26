@@ -5,9 +5,9 @@ config();
 
 test('test', async ({ page }) => {
   test.setTimeout(60000);
+  await page.goto('https://demo.peppercloud.com/login');
   const testData = generateAllRandomData();
   console.log('Generated Data:', testData);
-  await page.goto('https://demo.peppercloud.com/login');
   await page.getByRole('textbox', { name: 'Email ID' }).fill(process.env.pepper_email);
   await page.getByRole('button', { name: 'Next' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill(process.env.pepper_password);
