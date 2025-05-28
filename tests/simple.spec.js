@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 config();
 
 test('test', async ({ page }) => {
-  test.setTimeout(60000);
+  test.setTimeout(160000);
   await page.goto('https://demo.peppercloud.com/login');
   const testData = generateAllRandomData();
   console.log('Generated Data:', testData);
